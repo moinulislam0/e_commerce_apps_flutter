@@ -84,7 +84,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         widget.email, _otpController.text);
                     if (response) {
                       
-         
+                      
                       Get.offAll(HomeScreen());
                     } else {
                       Get.snackbar("Failed", "Try again",

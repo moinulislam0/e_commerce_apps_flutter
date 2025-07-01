@@ -3,10 +3,10 @@ import 'package:e_commerce_project/ui/data/service/model/HomeSliders_model.dart'
 import 'package:flutter/material.dart';
 
 class CaruselWidget extends StatefulWidget {
-  final HomeSliderData homesslidersModel;
+  final HomeslidersModel homeshomeslidersModel;
   const CaruselWidget({
     super.key,
-    required this.homesslidersModel,
+    required this.homeshomeslidersModel,
   });
 
   @override
@@ -31,7 +31,7 @@ class _CaruselWidgetState extends State<CaruselWidget> {
             },
           ),
           items: [1, 2, 3, 4, 5].map((i) {
-            //widget.homeslidersModel.data?
+            //widget.homehomeslidersModel.data?
             return Builder(
               builder: (BuildContext context) {
                 return Container(
@@ -41,7 +41,7 @@ class _CaruselWidgetState extends State<CaruselWidget> {
                     color: Colors.amber,
                     borderRadius: BorderRadius.circular(10),
                     // image: DecorationImage(
-                    //     image: NetworkImage(sliders.image ?? '0'))
+                    //     image: NetworkImage(homesliders.image ?? '0'))
                   ),
                   child: Center(
                     child: Text("text ${i}"),
@@ -57,7 +57,7 @@ class _CaruselWidgetState extends State<CaruselWidget> {
             return Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(5, (i) {
-                //widget.homeslidersModel.data?.length ?? 0
+                //widget.homehomeslidersModel.data?.length ?? 0
                 //we can change the number of value 5  and this position we can stay above code;
                 return Padding(
                   padding: const EdgeInsets.all(8),

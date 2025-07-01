@@ -14,7 +14,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
- 
   const HomeScreen({super.key});
 
   @override
@@ -82,7 +81,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (homeSliderController.sliderIndecator) {
                   return CircularProgressIndicator();
                 }
-                return CaruselWidget(homesslidersModel: homeSliderController.homeSliderModel,);
+                return CaruselWidget(
+                  homeshomeslidersModel: homeSliderController.homeSliderModel,
+                );
               }),
               SizedBox(height: 10),
               Remakerslistwidget(
@@ -138,9 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 10,
               ),
               Remakerslistwidget(
-                  text: "Popular", text2: "See All", onTap: () {
-                    
-                  }),
+                  text: "Popular", text2: "See All", onTap: () {}),
               SizedBox(
                 height: 10,
               ),
@@ -152,7 +151,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   Product_card(),
                   Product_card(),
                   Product_card(),
-                  
                 ]),
               ),
               SizedBox(height: 10),

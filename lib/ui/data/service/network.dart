@@ -36,4 +36,30 @@ class Network {
           isSuccess: false, returnData: e.toString(), statusCode: -1);
     }
   }
+
+  static Future<ResponseModels> postRequest(
+      {required url, Map<String, dynamic>? body}) async {
+    try {
+      final Response response = await post(Uri.parse(Urls.baseurl + url),
+          headers: {
+            "Cotent-type": "application/json",
+            "Accept": "application/json",
+            "token": AuthController.token.toString()
+          },
+          body: jsonEncode(body));
+      if (response.statusCode == 200) {
+       return ResponseModels(
+            isSuccess: true,
+            returnData: jsonDecode(response.body),
+            statusCode: response.statusCode);
+      } else {
+       return ResponseModels(
+            isSuccess: false,
+            returnData: jsonDecode(response.body),
+            statusCode: response.statusCode);
+      }
+    } catch (e) {
+      return ResponseModels(isSuccess: false,statusCode: -1,returnData: e.toString());
+    }
+  }
 }

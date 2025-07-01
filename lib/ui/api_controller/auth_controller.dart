@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:e_commerce_project/ui/data/service/model/profile_models.dart';
+import 'package:e_commerce_project/ui/screen/emailVerification_scree.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -39,8 +40,20 @@ class AuthController extends GetxController {
         jsonDecode(preference.getString('user-profile') ?? '{}'));
   }
 
-  Future<void> clearToken() async {
+  Future<void> clearUserData() async {
     SharedPreferences preference = await SharedPreferences.getInstance();
     await preference.clear();
+    _token = null;
+  }
+
+  Future<void> logOut() async {
+    clearUserData();
+    await Get.to(EmailVerificaitionScreen());
+  }
+
+  Future<bool> checkAuthValidation() async{
+    final authState = await Get.find<AuthController>().isLoggedIn();
+    Get.to(const EmailVerificaitionScreen());
+    return authState;
   }
 }

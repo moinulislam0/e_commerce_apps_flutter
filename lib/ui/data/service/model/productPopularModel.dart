@@ -1,15 +1,15 @@
-class HomeslidersModel {
+class Productpopularmodel {
   String? msg;
-  List<homesliders>? data;
+  List<PopularSlider>? data;
 
-  HomeslidersModel({this.msg, this.data});
+  Productpopularmodel({this.msg, this.data});
 
-  HomeslidersModel.fromJson(Map<String, dynamic> json) {
+  Productpopularmodel.fromJson(Map<String, dynamic> json) {
     msg = json['msg'];
     if (json['data'] != null) {
-      data = <homesliders>[];
+      data = <PopularSlider>[];
       json['data'].forEach((v) {
-        data!.add(homesliders.fromJson(v));
+        data!.add(PopularSlider.fromJson(v));
       });
     }
   }
@@ -24,8 +24,10 @@ class HomeslidersModel {
   }
 }
 
+
+
 // ignore: camel_case_types
-class homesliders {
+class PopularSlider{
   int? id;
   String? name;
   String? shortDesc; // corrected from shortDoes
@@ -34,7 +36,7 @@ class homesliders {
   String? createdAt;
   String? updatedAt;
 
-  homesliders({
+  PopularSlider({
     this.id,
     this.name,
     this.shortDesc,
@@ -44,7 +46,7 @@ class homesliders {
     this.updatedAt,
   });
 
-  homesliders.fromJson(Map<String, dynamic> json) {
+  PopularSlider.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     shortDesc = json['shortDesc']; // corrected key if backend sends this

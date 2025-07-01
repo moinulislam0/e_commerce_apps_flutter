@@ -60,5 +60,6 @@ class GetxBindings extends Bindings {
     Get.put(AuthController());
     Get.put(UserprofileController());
     Get.put(HomeController());
+   
   }
 }
